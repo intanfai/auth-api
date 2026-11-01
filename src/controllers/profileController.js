@@ -1,18 +1,16 @@
-const pool = require('../db');
+const userModel = require('../models/userModel');
 
 // GET /api/profile
+// req.userId diisi oleh middleware authenticate (dari payload JWT)
 const getProfile = async (req, res, next) => {
   try {
-    const result = await pool.query(
-      'SELECT id, name, email, gender, created_at FROM users WHERE id = $1',
-      [req.userId]
-    );
+    const user = await userModel.findById(req.userId);
 
-    if (result.rowCount === 0) {
+    if (!user) {
       return res.status(404).json({ message: 'User tidak ditemukan' });
     }
 
-    return res.json({ data: result.rows[0] }); // password tidak ikut dikirim
+    return res.json({ data: user }); // password tidak ikut dikirim
   } catch (err) {
     next(err);
   }
