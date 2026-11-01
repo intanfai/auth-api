@@ -16,6 +16,7 @@ src/
 ├── validators/    # skema validasi input (Joi)
 ├── middlewares/   # autentikasi JWT, error handler
 ├── routes/        # pemetaan URL ke controller
+├── tests/
 ├── db.js          # koneksi database
 ├── app.js         # konfigurasi Express
 └── server.js      # entry point
