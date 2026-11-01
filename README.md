@@ -48,17 +48,17 @@ src/
 ### POST /api/auth/register
 Request:
 ```json
-{ "name": "Budi", "email": "budi@mail.com", "gender": "male", "password": "rahasia123" }
+{ "name": "Intan", "email": "intan@gmail.com", "gender": "female", "password": "intan123" }
 ```
 Response 201:
 ```json
-{ "message": "Registrasi berhasil", "data": { "id": 1, "name": "Budi", "email": "budi@mail.com", "gender": "male", "created_at": "..." } }
+{ "message": "Registrasi berhasil", "data": { "id": 1, "name": "Intan", "email": "intan@gmail.com", "gender": "female", "created_at": "..." } }
 ```
 
 ### POST /api/auth/login
 Request:
 ```json
-{ "email": "budi@mail.com", "password": "rahasia123" }
+{ "email": "intan@gmail.com", "password": "intan123" }
 ```
 Response 200:
 ```json
@@ -70,7 +70,7 @@ Header: `Authorization: Bearer <token>`
 
 Response 200:
 ```json
-{ "data": { "id": 1, "name": "Budi", "email": "budi@mail.com", "gender": "male", "created_at": "..." } }
+{ "data": { "id": 1, "name": "Intan", "email": "intan@gmail.com", "gender": "female", "created_at": "..." } }
 ```
 
 ### Kode error
