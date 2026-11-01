@@ -12,6 +12,8 @@ menggunakan JWT.
 ```
 src/
 ├── controllers/   # logika bisnis
+├── models/        # query database
+├── validators/    # skema validasi input (Joi)
 ├── middlewares/   # autentikasi JWT, error handler
 ├── routes/        # pemetaan URL ke controller
 ├── db.js          # koneksi database
@@ -77,6 +79,7 @@ Response 200:
 | 401 | Kredensial salah / token tidak valid |
 | 404 | User tidak ditemukan |
 | 409 | Email sudah terdaftar |
+| 429 | Terlalu banyak request (rate limit: 20 request/15 menit per IP pada /api/auth) |
 | 500 | Kesalahan server |
 
 ## Asumsi
